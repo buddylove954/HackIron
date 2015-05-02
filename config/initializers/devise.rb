@@ -10,7 +10,7 @@ Devise.setup do |config|
   # Configure the e-mail address which will be shown in Devise::Mailer,
   # note that it will be overwritten if you use your own mailer class
   # with default "from" parameter.
-  config.mailer_sender = 'please-change-me-at-config-initializers-devise@example.com'
+  config.mailer_sender = 'checkr@herokuapp.com'
 
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
@@ -256,4 +256,13 @@ Devise.setup do |config|
   # When using omniauth, Devise cannot automatically set Omniauth path,
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = '/my_engine/users/auth'
+
+  # Before running the server, you must get the app's secret key from
+  # the facebook page and add it to your environment through
+  # (Windows) Control Panel --> System --> Advanced --> Environment Variables
+  # (Unix) export FB_API_SECRET='The actual secret key you got from fb'
+  #
+  # *DO NOT HARDCODE THE SECRET KEY TO THIS FILE IF YOU ARE PUSHING TO GITHUB*
+  config.omniauth :facebook, '940002662689649', ENV['FB_API_SECRET']
+
 end
