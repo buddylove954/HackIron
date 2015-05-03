@@ -1,17 +1,54 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <title>Hackathon</title>
-  <%= stylesheet_link_tag    'application', media: 'all'%>
-  <%= javascript_include_tag 'application'%>
-  <%= csrf_meta_tags %>
-</head>
-<body>
-<% if user_signed_in? %>
-<span><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></span> | 
-<span class="js-fb-signout"><%= link_to('Sign out of app and Facebook', destroy_user_session_path, method: :delete) %></span>
-<% end %>
-<%= yield %>
-
-</body>
+  <head>
+    <title>Hackathon</title>
+    <%= stylesheet_link_tag    'application', media: 'all'%>
+    <%= javascript_include_tag 'application'%>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% if user_signed_in? %>
+    <span><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></span> |
+    <span class="js-fb-signout"><%= link_to('Sign out of app and Facebook', destroy_user_session_path, method: :delete) %></span>
+    <% end %>
+    <nav>
+      <div class="nav-wrapper">
+        <a href="#!" class="brand-logo">Checkr</a>
+        <ul class="right hide-on-med-and-down">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="create-an-event.html">Create an Event</a></li>
+          <li><a href="event-registration.html">Event Registration</a></li>
+          <li><a href="selfie-check-in.html">Selfie check in</a></li>
+          <li><a href="take-photo.html">Take photo</a></li>
+          <li><a href="event-check-list.html">Event check list</a></li>
+          <li><a href="create-event-url.html">Create Event url</a></li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+    <footer class="page-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col l6 s12">
+            <h5 class="white-text">Footer Content</h5>
+            <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+          </div>
+          <div class="col l4 offset-l2 s12">
+            <h5 class="white-text">Links</h5>
+            <ul>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 1</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 2</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 3</a></li>
+              <li><a class="grey-text text-lighten-3" href="#!">Link 4</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="footer-copyright">
+        <div class="container center-align">
+          &copy; 2015 Copyright Text
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
