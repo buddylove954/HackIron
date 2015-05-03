@@ -19,6 +19,5 @@ class User < ActiveRecord::Base
     access_token = credentials['token']
     facebook = Koala::Facebook::API.new(access_token)
     facebook.get_object("me?fields=name,picture")
-    byebug
   end
 end

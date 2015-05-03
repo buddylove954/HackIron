@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: dipjwfumc
+  api_key: '755426438922352'
+  api_secret: MHPIR4pRf9K1uba6a_3aIK5B-rU
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: dipjwfumc
+  api_key: '755426438922352'
+  api_secret: MHPIR4pRf9K1uba6a_3aIK5B-rU
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: dipjwfumc
+  api_key: '755426438922352'
+  api_secret: MHPIR4pRf9K1uba6a_3aIK5B-rU
+  enhance_image_tag: true
+  static_image_support: false

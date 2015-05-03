@@ -263,7 +263,7 @@ Devise.setup do |config|
   # (Unix) export FB_API_SECRET='The actual secret key you got from fb'
   #
   # *DO NOT HARDCODE THE SECRET KEY TO THIS FILE IF YOU ARE PUSHING TO GITHUB*
-  config.omniauth :facebook, '940002662689649', ENV['FB_API_SECRET'],
+  config.omniauth :facebook, '940002662689649', '345070248f078f93b39c92c79c818d3a',
     scope: 'email,user_photos,user_events,manage_pages'
 
 end
