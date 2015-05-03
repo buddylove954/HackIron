@@ -3,7 +3,7 @@ class CallbacksController < ApplicationController
 	def home
 		# @graph = Koala::Facebook::API.new()
 		# profile = @graph.get_object("me")
-		render(:home)
+		render("create-an-event")
 	end
 	def callback
 		@graph = Koala::Facebook::API.new(params[:token])

@@ -22,7 +22,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # user Koala for fb api interactions
 gem 'koala'
-
+gem 'materialize-sass'
+gem 'font-awesome-rails'
 # Use ActiveModel has_secure_password
 gem 'bcrypt', '~> 3.1.7'
 gem 'therubyracer', platforms: :ruby

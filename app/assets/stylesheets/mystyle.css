@@ -1,0 +1,73 @@
+nav{
+	background-color:#263238;
+}
+
+.brand-logo{
+	margin-left:15px;
+}
+
+.btn, .btn-large{
+	background-color:#263238;
+}
+
+footer.page-footer{
+	background-color:#263238;
+	margin-top:100px;	
+}
+
+.clearboth20{
+	clear:both;
+	height:20px;
+}
+
+.mdi-image-center-focus-weak{
+	font-size:400px;
+}
+
+.margintop60 {
+  margin-top: 60px;
+}
+
+.marginbottom60 {
+  margin-bottom: 60px;
+}
+
+.title{
+	margin:60px 0 60px;
+}
+
+
+/* Homepage 
+================================ */
+.home-title{
+	margin-top:150px;
+}
+
+
+
+/* Event Page 
+================================ */
+.event-hours li{
+  padding-bottom: 15px;
+}
+
+.event-hours{
+  padding-top:20px;
+}
+
+.create-event-form{
+	padding:20px;
+}
+
+/* Take selfie check-in
+================================ */
+
+.take-a-selfie {
+  margin-top: 60px;
+  margin-bottom: 60px;
+}
+
+.snap-selfie-h4 {
+  margin-bottom: 60px;
+}
+
