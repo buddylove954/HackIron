@@ -19,7 +19,7 @@ gem 'jquery-rails'
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
-
+gem 'rails_12factor', group: :production
 # user Koala for fb api interactions
 gem 'koala'
 gem 'materialize-sass'

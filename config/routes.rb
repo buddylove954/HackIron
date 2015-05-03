@@ -2,7 +2,6 @@ Rails.application.routes.draw do
  
   resources :events
   root to: 'events#index'
-<<<<<<< HEAD
   get '/home' => "callbacks#home"
   post '/home' => "callbacks#callback"
   #user images
