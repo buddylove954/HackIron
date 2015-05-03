@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  manager_id: 
+  event: MyString
+  references: MyString
+
+two:
+  manager_id: 
+  event: MyString
+  references: MyString

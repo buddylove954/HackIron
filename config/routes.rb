@@ -7,8 +7,4 @@ Rails.application.routes.draw do
 
   devise_for :users, :controllers => { :omniauth_callbacks => "callbacks" }
 
-  def facebook
-      @user = User.from_omniauth(request.env["omniauth.auth"])
-      sign_in_and_redirect @user
-  end
 end
