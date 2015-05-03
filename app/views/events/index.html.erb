@@ -1,3 +1,15 @@
+<style>
+body{
+ background: url(<%= image_path('events2.jpg') %>) no-repeat center center fixed;
+ -webkit-background-size: cover;
+ -moz-background-size: cover;
+ -o-background-size: cover;
+ background-size: cover;
+}
+footer{
+  display: none;
+}
+</style>
 <div class="valign-wrapper">
 <div class="container center-align ">
 
@@ -16,8 +28,9 @@
        <div class="col s12 m3 l2" ><p></p></div>
     </div>
 
-<a class="waves-effect waves-light btn-large"><i class="fa fa-calendar left"></i>Create Event</a>
-
+<a class="waves-effect waves-light btn-large" href="<%= new_event_url %>">
+  <i class="fa fa-calendar left"></i>Create Event
+</a>
 </div>
 </div>
 

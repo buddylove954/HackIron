@@ -1,29 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
 
- <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="materialize/css/materialize.min.css">
-  <link rel="stylesheet" href="mystyle.css"> 
-         
-</head>
-<body>
-
-<nav>
-   <div class="nav-wrapper">
-     <a href="#!" class="brand-logo">Checkr</a>
-      <ul class="right hide-on-med-and-down">
-          <li><a href="index.html">Home</a></li>
-          <li><a href="create-an-event.html">Create an Event</a></li>
-          <li><a href="event-registration.html">Event Registration</a></li>
-          <li><a href="selfie-check-in.html">Selfie check in</a></li>
-          <li><a href="take-photo.html">Take photo</a></li>
-          <li><a href="event-check-list.html">Event check list</a></li>
-          <li><a href="create-event-url.html">Create Event url</a></li>
-      </ul> 
-   </div>
- </nav>
 
 
 <div class="container center-align take-a-selfie">
@@ -37,30 +12,26 @@
           <p class="center-align"> -->
           
 
-  <div class="card">
-            <div class="card-image">
-              <img src="images/sample-1.jpg">
-              <span class="card-title">Card Title</span>
-            </div>
-            <div class="card-content">
-              <p>Selfie goes in here.</p>
-            </div>
-            <div class="card-action">
-              <div class="btn">
-              <span>Upload Selfie</span>
-              <input type="file" />
-            </div>
-            </div>
-          </div>
-          </p>
-       </div>
-       <div class="col s12 m3 l2" ><p></p></div>
-    </div>
-    <div class="row">
-      <div class="col s12 center-align">
-        <button data-target="modal1" class="waves-effect waves-light btn-large modal-trigger">Submit</button>
-      </div>
-    </div>
+<div class="card">
+  <div class="card-image">
+    <img src="images/sample-1.jpg">
+    <span class="card-title">Selfie form</span>
+  </div>
+  <%= form_tag({action: :uploadimage}, multipart: true) do %>
+    <%= file_field_tag 'image', capture: "camera" %>
+    <%= submit_tag %>
+  <% end %>
+</div>
+</div>
+</p>
+</div>
+<div class="col s12 m3 l2" ><p></p></div>
+</div>
+<div class="row">
+<div class="col s12 center-align">
+<button data-target="modal1" class="waves-effect waves-light btn-large modal-trigger">Submit</button>
+</div>
+</div>
  <!-- Modal Structure -->
 
  <div id="modal1" class="modal center-align">
