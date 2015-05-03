@@ -16,12 +16,22 @@
         <a href="#!" class="brand-logo">Checkr</a>
         <ul class="right hide-on-med-and-down">
           <li><a href="index.html">Home</a></li>
-          <li><a href="create-an-event.html">Create an Event</a></li>
-          <li><a href="event-registration.html">Event Registration</a></li>
-          <li><a href="selfie-check-in.html">Selfie check in</a></li>
-          <li><a href="take-photo.html">Take photo</a></li>
-          <li><a href="event-check-list.html">Event check list</a></li>
-          <li><a href="create-event-url.html">Create Event url</a></li>
+          <!-- <li><a href="create-an-event.html">Create an Event</a></li> -->
+          <li><%= link_to('Create an Event', new_event_url) %></li>
+          <% if @event %>
+          <!-- <li><a href="selfie-check-in.html">Selfie check in</a></li> -->
+          <li><%= link_to('Selfie check-in', edit_event_path(@event.id)) %></li>
+          <!-- <li><a href="take-photo.html">Take photo</a></li> -->
+          <li><%= link_to('Take photo', edit_event_path(@event.id)) %></li>
+          <!-- <li><a href="event-check-list.html">Event check list</a></li> -->
+          <li><%= link_to('Event check list', edit_event_path(@event.id)) %></li>
+          <% end %>
+          <!-- <li><a href="create-event-url.html">Create Event url</a></li> -->
+          <li><%= link_to('Create event url', new_event_url) %></li>
+          
+          
+          
+          
         </ul>
       </div>
     </nav>
