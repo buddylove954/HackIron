@@ -1,0 +1,60 @@
+<h1>Users#addimage</h1>
+<p>Find me in app/views/users/addimage.html.erb</p>
+<!-- <div class="container-fluid">
+<div class="welcome row text-center">
+  <h1>Hey user</h1>
+  <span class="label label-primary"> Welcome to the chat</span>
+<button id="b">Snap It</button>
+<div class="video row">
+  <div class="col-sm-6"><video id="v" width="600px" height="480px"class="videostream" autoplay></video></div>
+  <div class="col-sm-6"><canvas id="c" width="600px" height="480px"></canvas></div>
+   
+
+ 
+  <FORM id="#form" type="hidden" action="http://localhost:3000/addimage" method="post">
+		 <input type="file" id="canvasI" accept="image/*">
+		
+		<INPUT type="submit" value="Send">
+ 	</FORM> 
+
+
+
+</div>
+</div> -->
+<%= form_tag({action: :uploadimage}, multipart: true) do %>
+  <%= file_field_tag 'image', capture: "camera" %>
+  <%= submit_tag %>
+<% end %>
+
+<!-- <form id="imageform" method="post" type="hidden" action="<%= uploadimage_path %>">
+<input type="file" name="image" accept="image/*" capture="camera">
+<input name="authenticity_token" value="<%= form_authenticity_token %>" type="hidden">
+<input type="submit" value="submit">
+</form> -->
+// <script>
+//     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+
+//     var constraints = { audio: true, video: true };
+//     var video = document.querySelector("video");
+//     var vid = $("#v");
+//     var canvas = document.getElementById("c");
+//     var button = document.getElementById("b");
+
+//     button.disabled = false;
+//     function successCallback(stream) {
+//       video.src = window.URL.createObjectURL(stream);
+//     }
+
+//     function errorCallback(error){
+//       console.log("getUserMedia error: ", error);
+//     }
+//     button.onclick = function() {
+//       canvas.getContext("2d").drawImage(video, 0, 0, 600, 480, 0, 0, 600, 480);
+//       var img = canvas.toDataURL('img/jpg');
+//        document.getElementById('canvasImg').src = img;
+//       // $('#base64').val(img)
+//       alert("done");
+//     };
+
+//     navigator.getUserMedia(constraints, successCallback, errorCallback);
+// </script>

@@ -4,5 +4,15 @@
 
 ==An app to verify user identity through facial recognition and images instead of traditional methods
 
+
+Kairos API
+Facebook Login
+=======
+Nelson Cuadras - nelson.cuadras@gmail.com | twitter.com/nelsoncuadras
+Buddy Love - wlove29@gmail.com | 
+Priscilla Rodriguez - pristella84@yahoo.com | twitter.com/prisskreative
+Micah Resnick - resnickmicah@gmail.com | twitter.com/kohdup
+Josh Alexy - jalexy12@gmail.com |
+
 Kairos API
 Facebook Login
