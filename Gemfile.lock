@@ -70,6 +70,8 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.9.1)
       faraday (>= 0.7.4, < 0.10)
+    font-awesome-rails (4.3.0.0)
+      railties (>= 3.2, < 5.0)
     globalid (0.3.5)
       activesupport (>= 4.1.0)
     hashie (3.4.1)
@@ -92,6 +94,8 @@ GEM
       nokogiri (>= 1.5.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.96.1)
+      sass (~> 3.3)
     mime-types (2.5)
     mini_portile (0.6.2)
     minitest (5.6.1)
@@ -197,10 +201,12 @@ DEPENDENCIES
   bcrypt (~> 3.1.7)
   byebug
   devise
+  font-awesome-rails
   jbuilder (~> 2.0)
   jquery-rails
   kairos-api!
   koala
+  materialize-sass
   omniauth
   omniauth-facebook
   pg
