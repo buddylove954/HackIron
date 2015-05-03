@@ -22,7 +22,7 @@
 </div>
 </div> -->
 <%= form_tag({action: :uploadimage}, multipart: true) do %>
-  <%= file_field_tag 'image' %>
+  <%= file_field_tag 'image', capture: "camera" %>
   <%= submit_tag %>
 <% end %>
 
