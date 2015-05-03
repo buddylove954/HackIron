@@ -19,6 +19,9 @@ class DeviseCreateUsers < ActiveRecord::Migration
       t.inet     :current_sign_in_ip
       t.inet     :last_sign_in_ip
 
+      ## Custom
+      t.string :fb_token, null: false, default: ""
+
       ## Confirmable
       # t.string   :confirmation_token
       # t.datetime :confirmed_at

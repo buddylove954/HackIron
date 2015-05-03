@@ -11,6 +11,14 @@ class User < ActiveRecord::Base
         user.uid = auth.uid
         user.email = auth.info.email
         user.password = Devise.friendly_token[0,20]
+        user.fb_token = auth.credentials.token
       end
+  end
+
+  def self.koala(credentials)
+    access_token = credentials['token']
+    facebook = Koala::Facebook::API.new(access_token)
+    facebook.get_object("me?fields=name,picture")
+    byebug
   end
 end

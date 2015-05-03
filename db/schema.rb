@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503032154) do
+ActiveRecord::Schema.define(version: 20150503012201) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -19,9 +19,9 @@ ActiveRecord::Schema.define(version: 20150503032154) do
   create_table "attends", force: :cascade do |t|
     t.integer  "guest_id"
     t.integer  "event_id"
-    t.string   "check_in_status", null: false
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.integer  "status",     null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   add_index "attends", ["event_id"], name: "index_attends_on_event_id", using: :btree
@@ -35,22 +35,6 @@ ActiveRecord::Schema.define(version: 20150503032154) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
-
-  create_table "guests", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "guests", ["user_id"], name: "index_guests_on_user_id", using: :btree
-
-  create_table "managers", force: :cascade do |t|
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  add_index "managers", ["user_id"], name: "index_managers_on_user_id", using: :btree
 
   create_table "owns", force: :cascade do |t|
     t.integer  "manager_id"
@@ -73,15 +57,15 @@ ActiveRecord::Schema.define(version: 20150503032154) do
     t.datetime "last_sign_in_at"
     t.inet     "current_sign_in_ip"
     t.inet     "last_sign_in_ip"
+    t.string   "fb_token",               default: "", null: false
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "provider"
     t.string   "uid"
+    t.string   "type"
   end
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "guests", "users"
-  add_foreign_key "managers", "users"
 end
