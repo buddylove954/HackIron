@@ -11,13 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150503012201) do
+ActiveRecord::Schema.define(version: 20150503032154) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "attends", force: :cascade do |t|
-    t.integer  "user_id"
+    t.integer  "guest_id"
     t.integer  "event_id"
     t.string   "check_in_status", null: false
     t.datetime "created_at",      null: false
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 20150503012201) do
   end
 
   add_index "attends", ["event_id"], name: "index_attends_on_event_id", using: :btree
-  add_index "attends", ["user_id"], name: "index_attends_on_user_id", using: :btree
+  add_index "attends", ["guest_id"], name: "index_attends_on_guest_id", using: :btree
 
   create_table "events", force: :cascade do |t|
     t.datetime "start_time"
@@ -36,15 +36,31 @@ ActiveRecord::Schema.define(version: 20150503012201) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "owns", force: :cascade do |t|
+  create_table "guests", force: :cascade do |t|
     t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "guests", ["user_id"], name: "index_guests_on_user_id", using: :btree
+
+  create_table "managers", force: :cascade do |t|
+    t.integer  "user_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "managers", ["user_id"], name: "index_managers_on_user_id", using: :btree
+
+  create_table "owns", force: :cascade do |t|
+    t.integer  "manager_id"
     t.integer  "event_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
 
   add_index "owns", ["event_id"], name: "index_owns_on_event_id", using: :btree
-  add_index "owns", ["user_id"], name: "index_owns_on_user_id", using: :btree
+  add_index "owns", ["manager_id"], name: "index_owns_on_manager_id", using: :btree
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
@@ -66,8 +82,6 @@ ActiveRecord::Schema.define(version: 20150503012201) do
   add_index "users", ["email"], name: "index_users_on_email", unique: true, using: :btree
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
 
-  add_foreign_key "attends", "events"
-  add_foreign_key "attends", "users"
-  add_foreign_key "owns", "events"
-  add_foreign_key "owns", "users"
+  add_foreign_key "guests", "users"
+  add_foreign_key "managers", "users"
 end

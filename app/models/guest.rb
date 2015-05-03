@@ -1,3 +1,4 @@
-class Guest < User
-  has_many :events, through :owns
+class Guest < ActiveRecord::Base
+  has_many :attends
+  has_many :events, through: :attends
 end
