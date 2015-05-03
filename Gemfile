@@ -30,6 +30,9 @@ gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
 
+# Use Kairos for image recognition
+gem 'kairos-api', git: 'https://github.com/kany/kairos-api.git'
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
