@@ -7,7 +7,10 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-
+<% if user_signed_in? %>
+<span><%= link_to('Sign out', destroy_user_session_path, method: :delete) %></span> | 
+<span class="js-fb-signout"><%= link_to('Sign out of app and Facebook', destroy_user_session_path, method: :delete) %></span>
+<% end %>
 <%= yield %>
 
 </body>
