@@ -30,7 +30,7 @@ gem 'therubyracer', platforms: :ruby
 gem 'devise'
 gem 'omniauth'
 gem 'omniauth-facebook'
-
+gem 'carrierwave'
 # Use Kairos for image recognition
 gem 'kairos-api', git: 'https://github.com/kany/kairos-api.git'
 
